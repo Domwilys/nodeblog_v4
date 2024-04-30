@@ -1,0 +1,21 @@
+<div class="d-flex align-items-center justify-content-center">
+    <div class="card mt-5 mb-5 w-75">
+        <div class="card-body">
+            <h2 class="mb-4">Welcome {{user.name}}</h2>
+            <form action="/user/profile/{{user._id}}/update" method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="email" value="{{user.email}}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" aria-describedby="username" value="{{user.name}}" required>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Edit</button>
+            </form>
+            <form action="/user/profile/delete/{{user._id}}" method="post">
+                <button type="submit" class="btn btn-danger mt-3">Delete account</button>
+            </form>
+        </div>
+    </div>
+</div>

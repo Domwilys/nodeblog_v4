@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node-blog-app
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8787:8787"
+    environment:
+      - MONGODB_URI=mongodb+srv://willyanpaproski123:jvw31818@nodeblogcluster.shmafnn.mongodb.net/
+      - APP_PORT=8787
+    networks:
+      - nodeblog-network
+
+networks:
+  nodeblog-network:
+    external: true

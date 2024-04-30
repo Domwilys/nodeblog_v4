@@ -1,0 +1,59 @@
+{{#each posts}}
+    <div class="post container mt-5 mb-3 justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-3 mb-2">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                            <div class="ms-2 c-details">
+                                <h6 class="mb-0">Mailchimp</h6> <span>{{createdAt}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <h3 class="heading">{{title}}</h3>
+                        <p class="mt-5">{{content}}</p>
+                        <div class="mt-5">
+                            <div id="tags" class="mt-3">
+                                {{#each tags}}
+                                    <small id="tags">#{{this.name}}</small>
+                                {{else}}
+                                    <span>Nenhuma tag</span>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <p>Nenhuma postagem encontrada</p>
+{{/each}}
+
+<form action="/" method="post" id="finalCheckForm">
+    <input type="hidden" id="finalPageCheckState" name="finalPageCheckState" value="">
+</form>
+
+<script>
+
+    let formSubmitted = false; // Variável para controlar se o formulário já foi enviado
+
+    window.addEventListener('scroll', () => {
+        // Verifica se o formulário já foi enviado e sai da função se sim
+        if (formSubmitted) {
+            console.log('formulário não enviado');
+        }
+
+        // Verifica se a posição do scroll atingiu um determinado ponto da página
+        // Aqui você pode adicionar sua lógica para determinar quando o formulário deve ser enviado
+        if (window.scrollY > 1000) { // Exemplo: se o scrollY for maior que 1000 pixels
+            // Envie o formulário
+            $('#finalCheckForm').submit();
+            console.log('Formulário enviado');
+            formSubmitted = true; // Atualiza a variável para indicar que o formulário foi enviado
+        }
+    });
+
+</script>
