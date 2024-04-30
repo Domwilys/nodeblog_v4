@@ -7,12 +7,15 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" aria-describedby="email" required>
                 </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
+                <label for="password" class="form-label">Password</label>
+                <div class="mb-3 input-group">
+                    <input type="password" class="password-field form-control" id="password" name="password" required>
+                    <button type="button" onclick="changeInputType()" class="password-icon input-group-addon"></button>
                 </div>
                 <button type="submit" class="btn btn-primary mt-3">Sign In</button>
             </form>
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="/js/viewPasswordLogin.js"></script>

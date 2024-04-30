@@ -33,6 +33,7 @@ const userController = {
                 
                 if (!user) {
                     errors.push({text: 'User not found'});
+                    console.log(`Usuário com o email ${email} não encontrado`);
                 } else {
                     const isPasswordMatch = await bcrypt.compare(password, user.password);
 

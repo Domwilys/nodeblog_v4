@@ -1,0 +1,15 @@
+.password-field {
+    max-width: 900px;
+    max-height: 40px;
+    border-radius: 5px;
+}
+
+.password-icon {
+    padding-left: 40px;
+    width: 100%;
+    max-width: 20px;
+    height: 50px;
+    background: url('https://cdn-icons-png.flaticon.com/512/44/44326.png') no-repeat right;
+    background-size: 30px;
+    border: none;
+}
